@@ -11,6 +11,9 @@ func routes(_ app: Application) throws {
     
     app.get("username", ":username") { req -> String in
         let username = req.parameters.get("username")!
+        req.logger.info("Hello \(username)") // Add Logger
         return "Hello, \(username)"
     }
+    
+    // print(app.routes.all)
 }
